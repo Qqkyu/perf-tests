@@ -4373,12 +4373,6 @@ spec:
         app: agent-sandbox-controller
     spec:
       serviceAccountName: agent-sandbox-controller
-      nodeSelector:
-        cloud.google.com/gke-nodepool: controller-pool
-      tolerations:
-      - key: "controller-pool"
-        operator: "Exists"
-        effect: "NoSchedule"
       containers:
       - name: agent-sandbox-controller
         image: registry.k8s.io/agent-sandbox/agent-sandbox-controller:v0.4.2
@@ -4402,8 +4396,8 @@ spec:
           protocol: TCP
         resources:
           requests:
-            memory: "12Gi"
-            cpu: "12"
+            memory: "2Gi"
+            cpu: "2"
 ---
 ---
 
